@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css'
 const pageTitle = "Apuntes";
 ---
 <html lang="en">
@@ -18,5 +19,6 @@ const pageTitle = "Apuntes";
         <p>En astro, para declarar variables antes de inicializar el HTML, podemos añadirlos mediante el uso de "---" arriba y abajo y entre medias , declarar todas las variables que queramos.</p>
         <p>Los estilos irán en la cabecera de la página "En el head" y a partir de ahí se irán añadiendo o modificando a gusto de consumidor.</p>
         <p>En las declaraciones de variables se pueden añadir variables para utilizar dentro de los estilos usando en el style el "define:vars=doble corchete con las variables que queramos asignar dentro."</p>
+		<p>Para añadir estilos globales crearemos una carpeta styles en la cuál introduciremos un archivo global.css para indicar que esos estilos serán globales y para añadirlos utilizaremos el import en la zona de declaración de variables.</p>
 	</body>
 </html>
