@@ -1,41 +1,18 @@
 ---
 import '../styles/global.css';
-import Header from '../components/header.astro';
-import Hamburger from '../components/hamburger.astro';
-import Footer from '../components/footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Apuntes";
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<style>
-            li {
-                color: blue;
-				font-weight:"bold";
-                font-size: 1.3rem;
-            }
-          </style>
-	</head>
-	<body>
-		<Hamburger/>
-        <Header />
-		<h1>{pageTitle}</h1>
-		<ul>
-			<li>En astro, para declarar variables antes de inicializar el HTML, podemos añadirlos mediante el uso de "---" arriba y abajo y entre medias , declarar todas las variables que queramos.</li>
-			<li>Los estilos irán en la cabecera de la página "En el head" y a partir de ahí se irán añadiendo o modificando a gusto de consumidor.</li>
-			<li>En las declaraciones de variables se pueden añadir variables para utilizar dentro de los estilos usando en el style el "define:vars=doble corchete con las variables que queramos asignar dentro."</li>
-			<li>Para añadir estilos globales crearemos una carpeta styles en la cuál introduciremos un archivo global.css para indicar que esos estilos serán globales y para añadirlos utilizaremos el import en la zona de declaración de variables.</li>
-			<li>Para añadir componentes, se crea la carpeta components y dentro de ella crearemos los componentes.astro que vayamos a ir utilizando y añadiendo.</li>
-			<li> Se pueden importar los componentes utilizando el import Name from 'ruta' para por ejemplo añadir los footer y header con el navegador predefinido en todas las pantallas</li>
-			<li>Si quieres utilizar JS lo mejor es crear una carpeta "scripts" en la cuál crees los archivos para acciones del menú , aparición de imagenes, entre otras cosas.</li>
-		</ul>
-        <Footer/>
-		<script>
-            import "../scripts/menu.js";
-        </script>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+	<ul>
+		<li>En astro, para declarar variables antes de inicializar el HTML, podemos añadirlos mediante el uso de "---" arriba y abajo y entre medias , declarar todas las variables que queramos.</li>
+		<li>Los estilos irán en la cabecera de la página "En el head" y a partir de ahí se irán añadiendo o modificando a gusto de consumidor.</li>
+		<li>En las declaraciones de variables se pueden añadir variables para utilizar dentro de los estilos usando en el style el "define:vars=doble corchete con las variables que queramos asignar dentro."</li>
+		<li>Para añadir estilos globales crearemos una carpeta styles en la cuál introduciremos un archivo global.css para indicar que esos estilos serán globales y para añadirlos utilizaremos el import en la zona de declaración de variables.</li>
+		<li>Para añadir componentes, se crea la carpeta components y dentro de ella crearemos los componentes.astro que vayamos a ir utilizando y añadiendo.</li>
+		<li> Se pueden importar los componentes, scripts, layouts.. utilizando el import Name from 'ruta' para por ejemplo añadir los footer y header con el navegador predefinido en todas las pantallas o acciones o plantillas.</li>
+		<li>Si quieres utilizar JS lo mejor es crear una carpeta "scripts" en la cuál crees los archivos para acciones del menú , aparición de imagenes, entre otras cosas.</li>
+		<li>Para utilizar una plantilla crearemos la carpeta layouts e introduciremos la página con los datos que queramos.</li>
+		<li>Dicha plantilla se podrá integrar importandola como si de un componente se tratase. Para añadir texto en el post de igual forma, añadiremos en el layout un `slot'</li>
+	</ul>
+</BaseLayout>

@@ -1,27 +1,7 @@
 ---
-import '../styles/global.css';
-import Header from '../components/header.astro';
-import Hamburger from '../components/hamburger.astro';
-import Footer from '../components/footer.astro';
-const pageTitle = "Página de inicio";
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Home Page";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Hamburger/>
-		<Header />
-		<h1>{pageTitle}</h1>
-		<h1>Mi página de inicio Astro</h1>
-		<Footer />
-		<script>
-            import "../scripts/menu.js";
-        </script>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>My awesome blog subtitle</h2>
+</BaseLayout>
