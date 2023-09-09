@@ -1,5 +1,8 @@
 ---
-import '../styles/global.css'
+import '../styles/global.css';
+import Header from '../components/header.astro';
+import Hamburger from '../components/hamburger.astro';
+import Footer from '../components/footer.astro';
 const pageTitle = "Sobre mi";
 
 const identity = {
@@ -40,10 +43,8 @@ const fontWeight = "bold";
           </style>
 	</head>
 	<body>
-        <a href="/"> Inicio </a>
-        <a href="/about/"> Sobre mi </a>
-        <a href="/blog/"> Blog </a>
-        <a href="/apuntes/"> Apuntes </a>
+        <Hamburger/>
+        <Header />
 		<h1>{pageTitle}</h1>
         <h2>... ¡y mi nuevo sitio Astro!</h2>
 
@@ -68,5 +69,9 @@ const fontWeight = "bold";
         {finished && <p>¡He terminado este tutorial!</p>}
 
         {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
+        <Footer />
+        <script>
+            import "../scripts/menu.js";
+        </script>
 	</body>
 </html>
